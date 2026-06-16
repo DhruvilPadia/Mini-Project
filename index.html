@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Horizon Clock</title>
+  <!-- Google Fonts for Modern Look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="sky-layer">
+    <div id="stars"></div>
+    <div id="celestial-body"></div>
+    <!-- Subtle landscape silhouette at the bottom -->
+    <div class="landscape"></div>
+  </div>
+
+  <main class="app-container"       >
+    <header>
+      <h1>Global Horizon</h1>
+      <p class="subtitle">Experience time around the world</p>
+    </header>
+
+    <div class="controls">
+      <div class="search-container">
+        <div class="input-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="search" placeholder="Search any country..." autocomplete="off">
+        </div>
+        <ul id="countryList" class="dropdown hidden"></ul>
+      </div>
+      <button id="toggleFormat" class="glass-btn">Switch to 24H</button>
+    </div>
+
+    <div class="clock-display">
+      <div class="time-wrapper">
+        <span id="clock">00:00:00</span>
+        <span id="ampm"></span>
+      </div>
+      <div id="date">Loading...</div>
+      <div id="countryName">Local Time</div>
+    </div>
+  </main>
+
+  <!-- Addon: Time Events Toolbox -->
+  <aside class="time-events-toolbox">
+    <div class="toolbox-header">
+      <h2>Time Events</h2>
+      <button id="toggleToolbox" class="icon-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+      </button>
+    </div>
+    <div class="toolbox-content" id="toolboxContent">
+      <div class="event-group" id="event-dawn">
+        <h3>Dawn (5 AM - 9 AM)</h3>
+        <ul class="country-list"></ul>
+      </div>
+      <div class="event-group" id="event-noon">
+        <h3>Noon (9 AM - 1 PM)</h3>
+        <ul class="country-list"></ul>
+      </div>
+      <div class="event-group" id="event-afternoon">
+        <h3>Afternoon (1 PM - 5 PM)</h3>
+        <ul class="country-list"></ul>
+      </div>
+      <div class="event-group" id="event-evening">
+        <h3>Evening (5 PM - 8 PM)</h3>
+        <ul class="country-list"></ul>
+      </div>
+      <div class="event-group" id="event-night">
+        <h3>Night (8 PM - 5 AM)</h3>
+        <ul class="country-list"></ul>
+      </div>
+    </div>
+  </aside>
+
+
+  <script src="countries.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
